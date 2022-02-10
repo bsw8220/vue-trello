@@ -46,10 +46,9 @@ export default {
           localStorage.setItem('token', data.accessToken)
           setAuthInHeader(data.accessToken)
           this.$router.push(this.rPath)
-          console.log('login success');
         })
         .catch(err => {
-          console.log(err);
+          this.error = err.data.error
         })
     }
   }
