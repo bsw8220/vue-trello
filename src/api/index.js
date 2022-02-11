@@ -26,14 +26,8 @@ export const setAuthInHeader = token => {
   axios
     .defaults
     .headers
-    .common['Authorization'] = token
-      ? `Bearer ${token}`
-      : null;
+    .common['Authorization'] = token ? `Bearer ${token}` : null;
 }
-
-const { token } = localStorage
-if (token)
-  setAuthInHeader(token)
 
 export const board = {
   fetch() {
